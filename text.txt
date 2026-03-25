@@ -2,3 +2,10 @@ I am back again.
 
 git remote add origin <url> - connecting to remote repo on github repo 
 git commit -m "message"
+
+final workflow:
+git init
+git add .
+git commit -m "first commit"
+git remote add origin <repo-url>
+git push origin main
