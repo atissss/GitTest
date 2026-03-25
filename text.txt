@@ -13,4 +13,4 @@ git push origin main                            #upload to remote
 Think of it like this
 git add → selecting files
 git commit → sealing them into a package
-git push → shipping the packag
+git push → shipping the package
