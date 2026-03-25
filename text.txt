@@ -9,3 +9,8 @@ git add .
 git commit -m "first commit"                    #saving locally to machine
 git remote add origin <repo-url>
 git push origin main                            #upload to remote 
+
+Think of it like this
+git add → selecting files
+git commit → sealing them into a package
+git push → shipping the packag
