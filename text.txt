@@ -1,1 +1,4 @@
 I am back again.
+
+git remote add origin <url> - connecting to remote repo on github repo 
+git commit -m "message"
