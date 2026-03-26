@@ -4,13 +4,76 @@ git remote add origin <url> - connecting to remote repo on github repo
 git commit -m "message"
 
 final workflow:
-git init
-git add .
-git commit -m "first commit"                    #saving locally to machine
-git remote add origin <repo-url>                #origin is used as an alias for the remote url
-git push origin main                            #upload to remote 
+    git init
+    git add .
+    git commit -m "first commit"                    #saving locally to machine
+    git remote add origin <repo-url>                #origin is used as an alias for the remote url
+    git push origin main                            #upload to remote 
 
 Think of it like this
-git add → selecting files
-git commit → sealing them into a package
-git push → shipping the package
+    git add → selecting files
+    git commit → sealing them into a package
+    git push → shipping the package
+
+#to remove files from staging (after add .), we use restore 
+    git restore --staged <files>
+
+#to see all the commits so far, use
+    git log
+
+#to go back to a specific log
+    git reset <log id>
+
+#to temporarily store files
+    git stash
+    to bring them back:
+        git stash pop
+    to delete them:
+        git stash clear
+
+BRANCHING:
+Why? To make updates to existing code without disturbing existing users. Kind of like editting a copy and then someone else likes this change and merges them to original code which users use.
+    git branch <name of branch>
+    git checkout <name of branch> = move me to a different version of my project
+
+git merge <name> = Bring the changes from another commit/branch INTO the one I’m currently on
+    checkout decides where you are standing
+    merge brings changes into where you're standing
+
+git rebase <to what branch i want to add on> = changes the base commit of my branch
+    "take my commits, replay them on top of another branch, and rewrite history as if that’s how it always was"
+
+detaching head = attaching it to a commit instead of a branch
+    git checkout abc123
+    git commit -m "test"
+    now abc123 -> new_commit
+    but no branch points to new_commit so its basically floating
+
+    DANGER? If we switch away, finding this new_commit is now difficult as nothing points to it now, thus work is lost.
+
+    git checkout -b new-branch #commits are now attached to new_branch
+
+git branch -f main HEAD~3 = move (by force) the main branch to 3 parents behind HEAD
+    reassign a branch to a commit
+
+#COMMITS ARE NODES IN A GRAPH
+#BRANCH IS A POINTER (LABEL)
+
+UNDOING CHANGES 
+RESET and REVERT
+reset = moves branch pointer backward
+A -> B -> C -> D (main)
+git reset b
+A -> B (main)
+C -> D (UNREACHABLE)
+    pretends C and D commits never happened
+
+revert = creates a new commit undoing the changes of the previous commit
+A → B → C → D   (main)
+git revert D
+A → B → C → D → D'   (main) (D' is undo of D)
+
+git rebase -i <to what branch> #-i means interactive
+git cherry_pick <commit> = handpicking a single commit
+
+
