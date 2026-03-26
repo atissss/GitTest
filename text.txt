@@ -88,3 +88,18 @@ Typical Workflow:
 origin = personal copy
 upstream = from where i have forked the project
     git remote add upstream <url of original work>
+
+Pull Requests = ONE BRANCH CAN ONLY CREATE ONE PULL REQUEST
+NEVER COMMIT/PUSH ON MAIN BRANCH
+
+Make a new branch for any feature addition or bug fix, so that we can create different pull requests
+
+you technically can delete files in pull requests, if you reset to a previous commit and force push it using git push original <branch> -f
+
+How do i update my branch to too other people's updates (updating to match upstream)
+    git fetch --all --prune, all means all branches duh, and prune means the ones which are deleted too
+
+    reset the main branch of origin, to the main branch of upstream
+        git reset --hard upstream/main
+
+    git pull upstream main, also does the same thing    
