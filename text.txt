@@ -81,6 +81,10 @@ fork (done on github not using git) = creates a copy of someones work in your ac
 
 Typical Workflow:
     fork on github
-    clone your fork
+    clone your fork, via git clone <url>
     work + push, pushes to my fork not the original repo
     create a pull request, ask original repo to accept your changes
+
+origin = personal copy
+upstream = from where i have forked the project
+    git remote add upstream <url of original work>
