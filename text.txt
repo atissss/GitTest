@@ -76,4 +76,11 @@ A → B → C → D → D'   (main) (D' is undo of D)
 git rebase -i <to what branch> #-i means interactive
 git cherry_pick <commit> = handpicking a single commit
 
+git clone <url> = copy a repo to your local machine
+fork (done on github not using git) = creates a copy of someones work in your account
 
+Typical Workflow:
+    fork on github
+    clone your fork
+    work + push, pushes to my fork not the original repo
+    create a pull request, ask original repo to accept your changes
